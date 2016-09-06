@@ -14,7 +14,7 @@ public class CommentAnalysis {
 				+"conf_file.libvirtd_conf.unix_sock\n"
 				+"conf_file..disable_bypass_cache\n";
 
-		System.out.println(comment);
+		System.out.println(comment.matches("Pull(\\s)+Requests[\\s\\S]*") && comment.matches("[\\s\\S]*Auto(\\s)+Cases[\\s\\S]*"));
 
 		String[] lines = comment.split("\n");
 		for (String line : lines) {
