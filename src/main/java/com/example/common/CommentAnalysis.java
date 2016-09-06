@@ -24,5 +24,17 @@ public class CommentAnalysis {
 				System.out.println(m.group(0));
 			}
 		}
+
+		System.out.println("=================================");
+		boolean isCaseline = false;
+		for (String line : lines) {
+			if (line.matches("Auto(\\s)+Cases(\\S)")) {
+				isCaseline = true;
+				continue;
+			}
+			if (isCaseline) {
+				System.out.println(line);
+			}
+		}
 	}
 }
